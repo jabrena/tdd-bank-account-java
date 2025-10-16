@@ -1,8 +1,8 @@
-
-# intellij
-out/
-.idea/workspace.xml
-.idea/misc.xml
-.idea/codeStyles
+.DS_Store
 target/
-
+.idea/
+.vscode/
+.cursor/
+.flattened-pom.xml
+*.log
+.classpath
