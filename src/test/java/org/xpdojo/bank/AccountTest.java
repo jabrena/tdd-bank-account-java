@@ -1,5 +1,7 @@
 package org.xpdojo.bank;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -24,17 +26,31 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AccountTest {
 
     @Test
-    public void shouldIncreaseTheBalanceWhenDepositingAnAmount() {
+    public void shouldDepositMoneyToTheAccount() {
 
         // Given
         int amount = 100;
         Money money = new Money(amount);
-        Account account = new Account();
 
         // When
+        Account account = new Account();
         account.deposit(money);
 
         // Then
-        assertThat(account.getBalance().getAmount()).isEqualTo(amount); // 100
+        assertThat(account.getBalance()).isEqualTo(money); // 100
+    }
+
+    @Test
+    public void shouldNotAcceptNegativeMoney() {
+        // Given
+        int amount = -1;
+        Money money = new Money(amount);
+
+        // When
+        Account account = new Account();
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> account.deposit(money));
+
+        // Then
+        assertThat(exception.getMessage()).isEqualTo("Money cannot be negative");
     }
 }

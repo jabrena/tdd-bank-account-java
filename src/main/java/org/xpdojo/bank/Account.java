@@ -9,6 +9,10 @@ public class Account {
     }
 
     public void deposit(Money money) {
+        //Preconditions
+        if (money.getAmount() < 0) {
+            throw new IllegalArgumentException("Money cannot be negative");
+        }
         balance = money.add(balance);
     }
 
