@@ -15,16 +15,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AccountTest {
 
     @Test
-    public void depositAnAmountToIncreaseTheBalance() {
+    public void shouldIncreaseTheBalanceWhenDepositingAnAmount() {
 
         // Given
         int amount = 100;
+        Money money = new Money(amount);
         Account account = new Account();
 
         // When
-        account.deposit(amount);
+        account.deposit(money);
 
         // Then
-        assertThat(account.getBalance()).isEqualTo(amount); // 100
+        assertThat(account.getBalance().getAmount()).isEqualTo(amount); // 100
     }
 }
