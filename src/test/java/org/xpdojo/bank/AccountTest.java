@@ -11,6 +11,15 @@ import static org.assertj.core.api.Assertions.assertThat;
  *  1. I can print out an Account balance slip (date, time, balance)
  *  1. I can print a statement of account activity (statement)
  *  1. I can apply Statement filters (include just deposits, withdrawal, date)
+ *
+ *  RIGHT-BICEP
+ *
+ *  RIGHT
+ *  Boundary
+ *  Inverse Relationship
+ *  Cross Check
+ *  Error Conditions
+ *  Performance
  */
 public class AccountTest {
 
