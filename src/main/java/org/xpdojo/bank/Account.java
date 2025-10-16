@@ -1,16 +1,14 @@
 package org.xpdojo.bank;
 
-import java.util.function.IntPredicate;
-
 public class Account {
 
+    private int balance;
+
     public void deposit(int amount) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deposit'");
+        balance += amount;
     }
 
-    public IntPredicate getBalance() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
+    public int getBalance() {
+        return balance;
     }
 }
