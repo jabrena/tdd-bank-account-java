@@ -2,6 +2,8 @@ package org.xpdojo.bank;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.math.BigDecimal;
+
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,7 +31,7 @@ public class AccountTest {
     public void shouldDepositMoneyToTheAccount() {
 
         // Given
-        int amount = 100;
+        BigDecimal amount = BigDecimal.valueOf(100);
         Money money = new Money(amount);
 
         // When
@@ -43,7 +45,7 @@ public class AccountTest {
     @Test
     public void shouldNotAcceptNegativeMoney() {
         // Given
-        int amount = -1;
+        BigDecimal amount = BigDecimal.valueOf(-1);
         Money money = new Money(amount);
 
         // When
