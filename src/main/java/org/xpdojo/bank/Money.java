@@ -20,7 +20,19 @@ public class Money {
     }
 
     public Money add(Money money) {
+        //Preconditions
+        if (money.getAmount().compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Money cannot be negative");
+        }
         return new Money(this.amount.add(money.getAmount()));
+    }
+
+    public Money subtract(Money money) {
+        //Preconditions
+        if (money.getAmount().compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Money cannot be negative");
+        }
+        return new Money(this.amount.subtract(money.getAmount()));
     }
 
     @Override
